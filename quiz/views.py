@@ -12,6 +12,6 @@ def helloAPI(request):
 @api_view(['GET'])
 def randomQuiz(request, id):
     totalQuizs  = Quiz.objects.all()
-    randomQuizs = random.sample(list(totalQuiz), id)
+    randomQuizs = random.sample(list(totalQuizs), id)
     serializer = QuizSerializer(randomQuizs, many=True)
     return Response(serializer.data)
